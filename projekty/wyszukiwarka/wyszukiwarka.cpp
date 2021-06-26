@@ -25,6 +25,17 @@ std::ostream& operator<<(std::ostream& stream, const Row& row) {
     return stream;
 }
 
+const std::pair<double, double>* Find(const String& name, const std::vector<Row>& vector) {
+    for (int i = 0; i < vector.size(); ++i) {
+        if (vector[i].r_Name == name) {
+            std::pair<double, double>* p = new std::pair<double, double>;
+            p->first = vector[i].r_X;
+            p->second = vector[i].r_Y;
+            return p;
+        }
+    }
+}
+
 int main() {
     std::fstream f;
     f.open("miasta.txt", std::ios::in);
@@ -37,6 +48,11 @@ int main() {
     for (Row r : v) {
         std::cout << r << std::endl;
     }
+    String u_name;
+    std::cout << "Podaj miasto: "; std::cin >> u_name;
+    const std::pair<double, double>* cord = Find(u_name, v);
+    std::cout << "Koordynaty: " << cord->first << " " << cord->second << std::endl;
+    delete cord;
     f.close();
     return 0;
 }
