@@ -26,7 +26,7 @@ std::ostream& operator<<(std::ostream& stream, const Row& row) {
 }
 
 const std::pair<double, double>* Find(const String& name, const std::vector<Row>& vector) {
-    for (Row r : vector) {
+    for (const Row& r : vector) {
         if (r.r_Name == name) {
             std::pair<double, double>* p = new std::pair<double, double>;
             p->first = r.r_X;
