@@ -47,7 +47,7 @@ int main() {
     }
     String u_name;
     std::cout << "Podaj miasto: "; std::cin >> u_name;
-    const std::pair<double, double> cord = Find(u_name, v);
+    const std::pair<double, double>& cord = Find(u_name, v);
     std::cout << "Koordynaty: " << cord.first << " " << cord.second << std::endl;
     f.close();
     return 0;
