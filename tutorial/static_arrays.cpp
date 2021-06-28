@@ -16,3 +16,5 @@ int main() {
     PrintArray(array);
     return 0;
 }
+
+//const cast pozwala na zrobienie tego co robi mutable w klasach ale tak troszkę mniej bezpośrednio chyba
