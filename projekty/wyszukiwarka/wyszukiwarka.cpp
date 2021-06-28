@@ -39,14 +39,18 @@ int main() {
     String s;
     std::vector<Row> v;
     while (getline(f, s)) {
+        if (s[0] == 1) {
+            continue;
+        }
         v.reserve(1);
         v.emplace_back(s);
     }
-    for (Row r : v) {
+    for (const Row& r : v) {
         std::cout << r << std::endl;
     }
     String u_name;
-    std::cout << "Podaj miasto: "; std::cin >> u_name;
+    std::cin.ignore(0);
+    std::cout << "Podaj miasto: "; getline(std::cin, u_name);
     const std::pair<double, double>& cord = Find(u_name, v);
     std::cout << "Koordynaty: " << cord.first << " " << cord.second << std::endl;
     f.close();
