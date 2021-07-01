@@ -36,7 +36,7 @@ int main() {
     }
     else {
         std::cout << "Plik nie mogl zostac otwarty\n";
-        std::cout << *std::get_if<int>(&g) << "\n";
+        std::cout << std::get<int>(g) << "\n";
     }
     return 0;
 }
