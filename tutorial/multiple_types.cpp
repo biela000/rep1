@@ -26,7 +26,7 @@ int main() {
         std::string& v = *value;
     }
     else {
-        std::cout << "To nie string!\n";
+        int v0 = std::get<int>(data);
     }
     std::cout << std::get<int>(data) << "\n";
     auto g = ReadFile("dataa.txt");
