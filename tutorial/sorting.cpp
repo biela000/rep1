@@ -13,7 +13,7 @@ int main() {
         if (b == 1) {
             return true;
         }
-        return a < b /*jeśli a > b to idzie na początek tablicy*/;
+        return a < b; //jeśli a > b to idzie na początek tablicy
     }); // jako trzeci argument można tu też użyć "std::greater<int>()" z biblioteki <functional>
     for (int& value : arr) {
         std::cout << value << std::endl;
